@@ -1,71 +1,56 @@
-# Exercise 1. Dominant Terms in a Sequence[cite: 1]
+### Exercise 1. Dominant Terms in a Sequence
 
-Compute[cite: 1]
-
-$$
-\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}
-$$[cite: 1]
-
-Explain why the highest-degree terms determine the result[cite: 1].
-
-## Solution[cite: 1]
-
-### 1. Identify the dominant terms[cite: 1]
-
-The numerator has the terms[cite: 1]
+Compute
 
 $$
-4n^2, \quad -3n, \quad 1
-$$[cite: 1]
+\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}.
+$$
 
-and the denominator has[cite: 1]
+Explain why the highest-degree terms determine the result.
+
+> **Why this exercise:** introduces the idea of a dominant term and teaches how to simplify the behavior of expressions for large arguments.
+
+#### Solution
+
+Both the numerator and the denominator are polynomials of degree $2$. Divide each of them by $n^2$, the highest power of $n$ that occurs:
 
 $$
-2n^2, \quad 5n, \quad -7
-$$[cite: 1]
+\frac{4n^2-3n+1}{2n^2+5n-7} = \frac{4-\dfrac{3}{n}+\dfrac{1}{n^2}}{2+\dfrac{5}{n}-\dfrac{7}{n^2}}.
+$$
 
-For very large $n$, the terms containing $n^2$ are much larger than the terms containing $n$ or a constant[cite: 1]. For example, when $n=1000$[cite: 1],
+For $n\to\infty$ the following limits hold:
 
 $$
-4n^2=4{,}000{,}000, \qquad -3n=-3000, \qquad 1=1
-$$[cite: 1]
+\frac{3}{n}\to 0, \qquad \frac{1}{n^2}\to 0, \qquad \frac{5}{n}\to 0, \qquad \frac{7}{n^2}\to 0.
+$$
 
-Therefore, $4n^2$ dominates the numerator, and $2n^2$ dominates the denominator[cite: 1].
-
-### 2. Divide by the highest power of $n$[cite: 1]
-
-We divide both the numerator and denominator by $n^2$[cite: 1]:
+The limit of the denominator is $2\neq 0$, so the quotient rule for limits applies:
 
 $$
-\frac{4n^2-3n+1}{2n^2+5n-7} = \frac{4-\frac{3}{n}+\frac{1}{n^2}}{2+\frac{5}{n}-\frac{7}{n^2}}
-$$[cite: 1]
+\begin{aligned}
+\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7} &= \frac{4-0+0}{2+0-0} \\
+&= 2.
+\end{aligned}
+$$
 
-### 3. Evaluate the limit[cite: 1]
+#### Why the highest-degree terms decide
 
-As $n\to\infty$[cite: 1],
+For large $n$, the terms of lower degree are negligible compared with $n^2$, because
 
 $$
-\frac{1}{n}\to0, \qquad \frac{1}{n^2}\to0
-$$[cite: 1]
+\frac{n}{n^2}=\frac{1}{n}\to 0, \qquad \frac{1}{n^2}\to 0.
+$$
 
-So[cite: 1],
+Hence for large $n$ the numerator behaves like $4n^2$ and the denominator like $2n^2$:
 
 $$
-\lim_{n\to\infty} \frac{4-\frac{3}{n}+\frac{1}{n^2}}{2+\frac{5}{n}-\frac{7}{n^2}} = \frac{4-0+0}{2+0-0} = \frac{4}{2} = 2
-$$[cite: 1]
+\frac{4n^2-3n+1}{2n^2+5n-7}\approx\frac{4n^2}{2n^2}=2.
+$$
 
-### Final answer[cite: 1]
+The ratio of the leading coefficients is therefore the limit.
+
+**Answer**
 
 $$
-\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}=2
-$$[cite: 1]
-
-### Why the highest-degree terms determine the result[cite: 1]
-
-Both numerator and denominator are quadratic polynomials[cite: 1]. Their leading terms are $4n^2$ and $2n^2$, and they grow much faster than the lower-degree terms[cite: 1]. After dividing by $n^2$, the remaining lower-degree terms become zero in the limit[cite: 1]. The limit is therefore the ratio of the leading coefficients[cite: 1]:
-
+\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}=2.
 $$
-\frac{4}{2}=2
-$$[cite: 1]
-
-> **Why this exercise:** introduces the idea of dominant terms and explains how to simplify expressions whose behavior is determined by their highest powers[cite: 1].
