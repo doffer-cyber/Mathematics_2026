@@ -1,140 +1,126 @@
-### Exercise 5. A 3×3 Matrix
-Use Gauss–Jordan elimination to find the inverse of
+### Exercise 6. Solving a System Using the Inverse
+Solve
+
+$$
+Ax=b,
+$$
+
+where
 
 $$
 A=
 \begin{pmatrix}
-1 & 1 & 0 \\
-0 & 1 & 1 \\
-1 & 0 & 1 \\
-\end{pmatrix}.
+2 & 1 \\
+1 & 3 \\
+\end{pmatrix},\qquad b=
+\begin{pmatrix}
+5 \\
+7 \\
+\end{pmatrix},
 $$
 
-Check the result by multiplication.
+using $x=A^{-1}b$. Then substitute the resulting vector back into the equation and check the result.
 
-> **Why this exercise:** provides necessary practice with the full method in a situation where the $2\times2$ formula no longer applies.
+> **Why this exercise:** shows the connection between inverse matrices and solving a linear system.
 
 ---
 
 #### Solution
 
-**Initial augmented matrix**
-
-$$
-[A\mid I]=
-\begin{pmatrix}
-1 & 1 & 0 & \mid & 1 & 0 & 0 \\
-0 & 1 & 1 & \mid & 0 & 1 & 0 \\
-1 & 0 & 1 & \mid & 0 & 0 & 1 \\
-\end{pmatrix}.
-$$
-
-**Step 1.** Replace $R_3$ by $R_3 - R_1$:
-
-$$
-\begin{pmatrix}
-1 & 1 & 0 & \mid & 1 & 0 & 0 \\
-0 & 1 & 1 & \mid & 0 & 1 & 0 \\
-0 & -1 & 1 & \mid & -1 & 0 & 1 \\
-\end{pmatrix}.
-$$
-
-**Step 2.** Replace $R_3$ by $R_3 + R_2$:
-
-$$
-\begin{pmatrix}
-1 & 1 & 0 & \mid & 1 & 0 & 0 \\
-0 & 1 & 1 & \mid & 0 & 1 & 0 \\
-0 & 0 & 2 & \mid & -1 & 1 & 1 \\
-\end{pmatrix}.
-$$
-
-**Step 3.** Replace $R_3$ by $\frac{1}{2}R_3$:
-
-$$
-\begin{pmatrix}
-1 & 1 & 0 & \mid & 1 & 0 & 0 \\
-0 & 1 & 1 & \mid & 0 & 1 & 0 \\
-0 & 0 & 1 & \mid & -\dfrac{1}{2} & \dfrac{1}{2} & \dfrac{1}{2} \\
-\end{pmatrix}.
-$$
-
-**Step 4.** Replace $R_2$ by $R_2 - R_3$:
-
-$$
-\begin{pmatrix}
-1 & 1 & 0 & \mid & 1 & 0 & 0 \\
-0 & 1 & 0 & \mid & \dfrac{1}{2} & \dfrac{1}{2} & -\dfrac{1}{2} \\
-0 & 0 & 1 & \mid & -\dfrac{1}{2} & \dfrac{1}{2} & \dfrac{1}{2} \\
-\end{pmatrix}.
-$$
-
-**Step 5.** Replace $R_1$ by $R_1 - R_2$:
-
-$$
-\begin{pmatrix}
-1 & 0 & 0 & \mid & \dfrac{1}{2} & -\dfrac{1}{2} & \dfrac{1}{2} \\
-0 & 1 & 0 & \mid & \dfrac{1}{2} & \dfrac{1}{2} & -\dfrac{1}{2} \\
-0 & 0 & 1 & \mid & -\dfrac{1}{2} & \dfrac{1}{2} & \dfrac{1}{2} \\
-\end{pmatrix}.
-$$
-
-The left block is now $I$, so the right block is the inverse:
-
-$$
-A^{-1}=\frac{1}{2}
-\begin{pmatrix}
-1 & -1 & 1 \\
-1 & 1 & -1 \\
--1 & 1 & 1 \\
-\end{pmatrix}.
-$$
-
-**Check by multiplication**
+**Determinant**
 
 $$
 \begin{aligned}
-AA^{-1} &= \frac{1}{2}
+\det A &= 2\cdot 3 - 1\cdot 1 \\
+       &= 6 - 1 \\
+       &= 5.
+\end{aligned}
+$$
+
+Since $\det A = 5\neq 0$, the matrix $A$ is invertible.
+
+**Inverse**
+
+By the formula for a $2\times2$ matrix,
+
+$$
+A^{-1}=\frac{1}{5}
 \begin{pmatrix}
-1 & 1 & 0 \\
-0 & 1 & 1 \\
-1 & 0 & 1 \\
+3 & -1 \\
+-1 & 2 \\
+\end{pmatrix}.
+$$
+
+**Solution of the system**
+
+Multiplying $Ax=b$ from the left by $A^{-1}$ gives $x=A^{-1}b$. Hence
+
+$$
+\begin{aligned}
+x &= \frac{1}{5}
+\begin{pmatrix}
+3 & -1 \\
+-1 & 2 \\
 \end{pmatrix}
 \begin{pmatrix}
-1 & -1 & 1 \\
-1 & 1 & -1 \\
--1 & 1 & 1 \\
+5 \\
+7 \\
 \end{pmatrix} \\
-&= \frac{1}{2}
+&= \frac{1}{5}
 \begin{pmatrix}
-1+1+0 & -1+1+0 & 1-1+0 \\
-0+1-1 & 0+1+1 & 0-1+1 \\
-1+0-1 & -1+0+1 & 1+0+1 \\
+3\cdot 5 + (-1)\cdot 7 \\
+(-1)\cdot 5 + 2\cdot 7 \\
 \end{pmatrix} \\
-&= \frac{1}{2}
+&= \frac{1}{5}
 \begin{pmatrix}
-2 & 0 & 0 \\
-0 & 2 & 0 \\
-0 & 0 & 2 \\
+8 \\
+9 \\
 \end{pmatrix} \\
 &=
 \begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1 \\
+\dfrac{8}{5} \\
+\dfrac{9}{5} \\
 \end{pmatrix}.
 \end{aligned}
 $$
 
-Since $AA^{-1}=I$ for a square matrix, the computed matrix is the inverse of $A$.
+**Check**
+
+Substitute $x$ into $Ax$:
+
+$$
+\begin{aligned}
+Ax &=
+\begin{pmatrix}
+2 & 1 \\
+1 & 3 \\
+\end{pmatrix}
+\begin{pmatrix}
+\dfrac{8}{5} \\
+\dfrac{9}{5} \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+\dfrac{16}{5} + \dfrac{9}{5} \\
+\dfrac{8}{5} + \dfrac{27}{5} \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+5 \\
+7 \\
+\end{pmatrix} \\
+&= b.
+\end{aligned}
+$$
+
+The equation is satisfied.
 
 **Answer:**
 
 $$
-A^{-1}=\frac{1}{2}
+x=
 \begin{pmatrix}
-1 & -1 & 1 \\
-1 & 1 & -1 \\
--1 & 1 & 1 \\
+\dfrac{8}{5} \\
+\dfrac{9}{5} \\
 \end{pmatrix}.
 $$
