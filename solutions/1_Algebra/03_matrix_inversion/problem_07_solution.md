@@ -22,7 +22,8 @@ compute $(AB)^{-1}$ and $B^{-1}A^{-1}$. Check that the results are the same and 
 **Step 1. The product $AB$**
 
 $$
-AB=
+\begin{aligned}
+AB &=
 \begin{pmatrix}
 1 & 1 \\
 0 & 1 \\
@@ -30,12 +31,12 @@ AB=
 \begin{pmatrix}
 2 & 0 \\
 0 & 3 \\
-\end{pmatrix}
-=
-\begin{pmatrix}
+\end{pmatrix} \\
+&= \begin{pmatrix}
 2 & 3 \\
 0 & 3 \\
 \end{pmatrix}
+\end{aligned}
 $$
 
 **Step 2. The inverse $(AB)^{-1}$**
@@ -49,16 +50,17 @@ $$
 so $AB$ is invertible. For a $2\times 2$ matrix, swap the diagonal entries, change the signs of the off-diagonal entries, and divide by the determinant:
 
 $$
-(AB)^{-1}=\frac{1}{6}
+\begin{aligned}
+(AB)^{-1} &= \frac{1}{6}
 \begin{pmatrix}
 3 & -3 \\
 0 & 2 \\
-\end{pmatrix}
-=
-\begin{pmatrix}
+\end{pmatrix} \\
+&= \begin{pmatrix}
 \frac{1}{2} & -\frac{1}{2} \\
 0 & \frac{1}{3} \\
 \end{pmatrix}
+\end{aligned}
 $$
 
 **Step 3. The inverses $A^{-1}$ and $B^{-1}$**
@@ -70,7 +72,10 @@ A^{-1}=
 \begin{pmatrix}
 1 & -1 \\
 0 & 1 \\
-\end{pmatrix},\qquad
+\end{pmatrix}
+$$
+
+$$
 B^{-1}=
 \begin{pmatrix}
 \frac{1}{2} & 0 \\
@@ -81,7 +86,8 @@ $$
 **Step 4. The product $B^{-1}A^{-1}$**
 
 $$
-B^{-1}A^{-1}=
+\begin{aligned}
+B^{-1}A^{-1} &=
 \begin{pmatrix}
 \frac{1}{2} & 0 \\
 0 & \frac{1}{3} \\
@@ -89,12 +95,12 @@ B^{-1}A^{-1}=
 \begin{pmatrix}
 1 & -1 \\
 0 & 1 \\
-\end{pmatrix}
-=
-\begin{pmatrix}
+\end{pmatrix} \\
+&= \begin{pmatrix}
 \frac{1}{2} & -\frac{1}{2} \\
 0 & \frac{1}{3} \\
 \end{pmatrix}
+\end{aligned}
 $$
 
 **Step 5. Comparison**
@@ -102,13 +108,14 @@ $$
 Steps 2 and 4 give the same matrix, so
 
 $$
-(AB)^{-1}=B^{-1}A^{-1}.
+(AB)^{-1} = B^{-1}A^{-1}.
 $$
 
 As a direct check:
 
 $$
-(AB)(B^{-1}A^{-1})=
+\begin{aligned}
+(AB)(B^{-1}A^{-1}) &=
 \begin{pmatrix}
 2 & 3 \\
 0 & 3 \\
@@ -116,12 +123,12 @@ $$
 \begin{pmatrix}
 \frac{1}{2} & -\frac{1}{2} \\
 0 & \frac{1}{3} \\
-\end{pmatrix}
-=
-\begin{pmatrix}
+\end{pmatrix} \\
+&= \begin{pmatrix}
 1 & 0 \\
 0 & 1 \\
 \end{pmatrix}
+\end{aligned}
 $$
 
 **Step 6. Meaning of the reversed order**
@@ -135,7 +142,8 @@ $$
 The factors $B$ and $B^{-1}$ meet in the middle and cancel, which only works in the reversed order. The product in the original order is different:
 
 $$
-A^{-1}B^{-1}=
+\begin{aligned}
+A^{-1}B^{-1} &=
 \begin{pmatrix}
 1 & -1 \\
 0 & 1 \\
@@ -143,13 +151,18 @@ A^{-1}B^{-1}=
 \begin{pmatrix}
 \frac{1}{2} & 0 \\
 0 & \frac{1}{3} \\
-\end{pmatrix}
-=
-\begin{pmatrix}
+\end{pmatrix} \\
+&= \begin{pmatrix}
 \frac{1}{2} & -\frac{1}{3} \\
 0 & \frac{1}{3} \\
 \end{pmatrix}
-\neq (AB)^{-1}.
+\end{aligned}
 $$
 
-This shows that matrix multiplication is not commutative, so the order of the inverses matters.
+Since
+
+$$
+A^{-1}B^{-1} \neq (AB)^{-1},
+$$
+
+matrix multiplication is not commutative, so the order of the inverses matters.
