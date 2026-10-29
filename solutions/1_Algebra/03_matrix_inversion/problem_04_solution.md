@@ -41,7 +41,7 @@ $$
 The left block is now $I$, hence
 
 $$
-A^{-1}=
+A^{-1} =
 \begin{pmatrix}
 -5 & 2 \\
 3 & -1 \\
@@ -72,8 +72,10 @@ Therefore, when the left block is reduced to $I$, the right block is exactly $A^
 
 **Verification.**
 
+The product of $A$ and the computed inverse is
+
 $$
-A A^{-1}=
+A A^{-1} =
 \begin{pmatrix}
 1 & 2 \\
 3 & 5 \\
@@ -81,8 +83,13 @@ A A^{-1}=
 \begin{pmatrix}
 -5 & 2 \\
 3 & -1 \\
-\end{pmatrix}
-=
+\end{pmatrix}.
+$$
+
+Multiplying the matrices gives
+
+$$
+A A^{-1} =
 \begin{pmatrix}
 1 & 0 \\
 0 & 1 \\
