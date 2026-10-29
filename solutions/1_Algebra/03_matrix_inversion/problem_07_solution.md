@@ -17,15 +17,12 @@ compute $(AB)^{-1}$ and $B^{-1}A^{-1}$. Check that the results are the same and 
 
 > **Why this exercise:** reinforces the inverse-of-a-product property and requires its interpretation.
 
----
+**Solution**
 
-#### Solution
-
-**The product $AB$**
+**Step 1. The product $AB$**
 
 $$
-\begin{aligned}
-AB &=
+AB=
 \begin{pmatrix}
 1 & 1 \\
 0 & 1 \\
@@ -33,109 +30,126 @@ AB &=
 \begin{pmatrix}
 2 & 0 \\
 0 & 3 \\
-\end{pmatrix} \\
-&=
-\begin{pmatrix}
-1\cdot 2 + 1\cdot 0 & 1\cdot 0 + 1\cdot 3 \\
-0\cdot 2 + 1\cdot 0 & 0\cdot 0 + 1\cdot 3 \\
-\end{pmatrix} \\
-&=
+\end{pmatrix}
+=
 \begin{pmatrix}
 2 & 3 \\
 0 & 3 \\
-\end{pmatrix}.
-\end{aligned}
+\end{pmatrix}
 $$
 
-**Computation of $(AB)^{-1}$**
+**Step 2. The inverse $(AB)^{-1}$**
+
+The determinant is
 
 $$
-\begin{aligned}
-\det(AB) &= 2\cdot 3 - 3\cdot 0 \\
-         &= 6.
-\end{aligned}
+\det(AB) = 2\cdot 3 - 3\cdot 0 = 6 \neq 0,
 $$
 
-By the formula for a $2\times2$ matrix,
+so $AB$ is invertible. For a $2\times 2$ matrix, swap the diagonal entries, change the signs of the off-diagonal entries, and divide by the determinant:
 
 $$
-\begin{aligned}
-(AB)^{-1} &= \frac{1}{6}
+(AB)^{-1}=\frac{1}{6}
 \begin{pmatrix}
 3 & -3 \\
 0 & 2 \\
-\end{pmatrix} \\
-&=
+\end{pmatrix}
+=
 \begin{pmatrix}
-\dfrac{1}{2} & -\dfrac{1}{2} \\
-0 & \dfrac{1}{3} \\
-\end{pmatrix}.
-\end{aligned}
+\frac{1}{2} & -\frac{1}{2} \\
+0 & \frac{1}{3} \\
+\end{pmatrix}
 $$
 
-**Computation of $A^{-1}$ and $B^{-1}$**
+**Step 3. The inverses $A^{-1}$ and $B^{-1}$**
 
-Since $\det A = 1$,
+Since $\det A = 1$, and $B$ is diagonal:
 
 $$
 A^{-1}=
 \begin{pmatrix}
 1 & -1 \\
 0 & 1 \\
-\end{pmatrix}.
-$$
-
-The matrix $B$ is diagonal, so its inverse is obtained by inverting the diagonal entries:
-
-$$
+\end{pmatrix},\qquad
 B^{-1}=
 \begin{pmatrix}
-\dfrac{1}{2} & 0 \\
-0 & \dfrac{1}{3} \\
-\end{pmatrix}.
+\frac{1}{2} & 0 \\
+0 & \frac{1}{3} \\
+\end{pmatrix}
 $$
 
-**Computation of $B^{-1}A^{-1}$**
+**Step 4. The product $B^{-1}A^{-1}$**
 
 $$
-\begin{aligned}
-B^{-1}A^{-1} &=
+B^{-1}A^{-1}=
 \begin{pmatrix}
-\dfrac{1}{2} & 0 \\
-0 & \dfrac{1}{3} \\
+\frac{1}{2} & 0 \\
+0 & \frac{1}{3} \\
 \end{pmatrix}
 \begin{pmatrix}
 1 & -1 \\
 0 & 1 \\
-\end{pmatrix} \\
-&=
+\end{pmatrix}
+=
 \begin{pmatrix}
-\dfrac{1}{2}\cdot 1 + 0\cdot 0 & \dfrac{1}{2}\cdot(-1) + 0\cdot 1 \\
-0\cdot 1 + \dfrac{1}{3}\cdot 0 & 0\cdot(-1) + \dfrac{1}{3}\cdot 1 \\
-\end{pmatrix} \\
-&=
+\frac{1}{2} & -\frac{1}{2} \\
+0 & \frac{1}{3} \\
+\end{pmatrix}
+$$
+
+**Step 5. Comparison**
+
+Steps 2 and 4 give the same matrix, so
+
+$$
+(AB)^{-1}=B^{-1}A^{-1}.
+$$
+
+As a direct check:
+
+$$
+(AB)(B^{-1}A^{-1})=
 \begin{pmatrix}
-\dfrac{1}{2} & -\dfrac{1}{2} \\
-0 & \dfrac{1}{3} \\
-\end{pmatrix}.
-\end{aligned}
+2 & 3 \\
+0 & 3 \\
+\end{pmatrix}
+\begin{pmatrix}
+\frac{1}{2} & -\frac{1}{2} \\
+0 & \frac{1}{3} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{pmatrix}
 $$
 
-**Comparison**
+**Step 6. Meaning of the reversed order**
 
-The two results coincide:
-
-$$
-(AB)^{-1} = B^{-1}A^{-1}.
-$$
-
-**Meaning of the reversed order**
-
-The product $AB$ means: first apply $B$, then apply $A$. To undo this, the steps must be undone in the opposite order: first undo $A$, then undo $B$. This is exactly the product $B^{-1}A^{-1}$.
-
-Algebraically,
+The matrix $AB$ applies $B$ first and then $A$. To undo this, the last operation must be undone first, so $A^{-1}$ is applied first and then $B^{-1}$. In algebraic form:
 
 $$
-\begin{aligned}
-(AB)(B^{-1}A^{-1}) &= A(BB^{-1})A^{-1} \\
-                   &= AIA^{-1} \\
+(AB)(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AA^{-1} = I.
+$$
+
+The factors $B$ and $B^{-1}$ meet in the middle and cancel, which only works in the reversed order. The product in the original order is different:
+
+$$
+A^{-1}B^{-1}=
+\begin{pmatrix}
+1 & -1 \\
+0 & 1 \\
+\end{pmatrix}
+\begin{pmatrix}
+\frac{1}{2} & 0 \\
+0 & \frac{1}{3} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{1}{2} & -\frac{1}{3} \\
+0 & \frac{1}{3} \\
+\end{pmatrix}
+\neq (AB)^{-1}.
+$$
+
+This shows that matrix multiplication is not commutative, so the order of the inverses matters.
