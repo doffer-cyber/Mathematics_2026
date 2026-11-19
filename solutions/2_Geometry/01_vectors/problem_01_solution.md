@@ -1,17 +1,88 @@
-## Question
+### Solution 1. Vector Operations and Their Meaning
 
-For $u=(2,-1,3)$ and $v=(-1,4,2)$, compute $u+v$, $u-v$, and $3u-2v$; verify $(u+v)-v=u$ and explain vector addition geometrically.
+Given:
 
-## Solution
+u = (2, -1, 3)
+v = (-1, 4, 2)
 
-Vector operations are performed coordinate by coordinate:
 
-$$u+v=(1,3,5),\qquad u-v=(3,-5,1),$$
+Step 1. Calculate u + v.
 
-$$3u-2v=(6,-3,9)-(-2,8,4)=(8,-11,5).$$
+Add the corresponding components:
 
-The requested check gives
+u + v = (2 + (-1), -1 + 4, 3 + 2)
 
-$$(u+v)-v=(1,3,5)-(-1,4,2)=(2,-1,3)=u.$$
+u + v = (1, 3, 5)
 
-Geometrically, adding vectors means placing the tail of the second vector at the head of the first; the sum is the displacement from the original tail to the final head (equivalently, the diagonal of the parallelogram).
+
+Step 2. Calculate u - v.
+
+Subtract the corresponding components:
+
+u - v = (2 - (-1), -1 - 4, 3 - 2)
+
+u - v = (3, -5, 1)
+
+
+Step 3. Calculate 3u - 2v.
+
+First, multiply each vector by its scalar:
+
+3u = (6, -3, 9)
+
+2v = (-2, 8, 4)
+
+Now subtract:
+
+3u - 2v = (6 - (-2), -3 - 8, 9 - 4)
+
+3u - 2v = (8, -11, 5)
+
+
+Step 4. Verify that (u + v) - v = u.
+
+We already calculated:
+
+u + v = (1, 3, 5)
+
+Subtract v:
+
+(u + v) - v = (1 - (-1), 3 - 4, 5 - 2)
+
+(u + v) - v = (2, -1, 3)
+
+This is equal to u.
+
+Therefore:
+
+(u + v) - v = u
+
+
+Final Answers:
+
+u + v = (1, 3, 5)
+
+u - v = (3, -5, 1)
+
+3u - 2v = (8, -11, 5)
+
+
+Geometric Meaning:
+
+Adding two vectors means combining their
+magnitudes and directions.
+
+Geometrically, the second vector is placed
+at the endpoint of the first vector.
+
+The resulting vector starts at the beginning
+of the first vector and ends at the endpoint
+of the second vector.
+
+This is known as the head-to-tail rule.
+
+Conclusion:
+
+Vector addition combines two vectors into
+one resulting vector, while subtraction can
+be understood as adding the opposite vector.
