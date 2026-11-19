@@ -1,19 +1,95 @@
-## Question
+### Solution 3. Vector Normalization
 
-Normalize $v=(3,4)$, check the unit length, reconstruct $v$, and explain what normalization changes.
+Given:
 
-## Solution
+v = (3, 4)
 
-First, $\|v\|=\sqrt{3^2+4^2}=5$. Dividing by this positive length gives the unit vector
+We want to find a unit vector e with the same direction
+and orientation as v.
 
-$$e=\frac{v}{\|v\|}=\left(\frac35,\frac45\right).$$
 
-Indeed,
+Step 1. Calculate the length of v.
 
-$$\|e\|=\sqrt{\frac9{25}+\frac{16}{25}}=1,$$
+The length of a vector is:
 
-and reconstruction yields
+||v|| = sqrt(x^2 + y^2)
 
-$$\|v\|e=5\left(\frac35,\frac45\right)=(3,4)=v.$$
+Substitute the coordinates:
 
-Normalization changes the length to one while preserving the direction and orientation because division is by the positive scalar $5$.
+||v|| = sqrt(3^2 + 4^2)
+
+||v|| = sqrt(9 + 16)
+
+||v|| = sqrt(25)
+
+Therefore:
+
+||v|| = 5
+
+
+Step 2. Find the unit vector e.
+
+To normalize a vector, divide each component
+by its length.
+
+e = v / ||v||
+
+e = (3/5, 4/5)
+
+Therefore:
+
+e = (3/5, 4/5)
+
+
+Step 3. Verify that ||e|| = 1.
+
+Calculate the length:
+
+||e|| = sqrt((3/5)^2 + (4/5)^2)
+
+||e|| = sqrt(9/25 + 16/25)
+
+||e|| = sqrt(25/25)
+
+Therefore:
+
+||e|| = 1
+
+
+Step 4. Reconstruct v.
+
+We want to verify:
+
+v = ||v||e
+
+Substitute the values:
+
+v = 5(3/5, 4/5)
+
+v = (3, 4)
+
+Therefore:
+
+v = ||v||e
+
+
+Final Answer:
+
+||v|| = 5
+
+e = (3/5, 4/5)
+
+||e|| = 1
+
+v = 5e = (3, 4)
+
+
+Conclusion:
+
+During normalization:
+- The length of the vector changes to 1.
+- The direction remains unchanged.
+- The orientation remains unchanged.
+
+Normalization separates the direction of a vector
+from its magnitude.
