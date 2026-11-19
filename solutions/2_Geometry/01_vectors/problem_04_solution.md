@@ -1,19 +1,102 @@
-## Question
+### Solution 4. Dot Product and Perpendicularity
 
-For $u=(1,2,-1)$ and $v=(2,-1,3)$, test perpendicularity. Find $a$ such that $w=(2,-1,a)$ is perpendicular to $u$ and check it.
+Given:
 
-## Solution
+u = (1, 2, -1)
 
-The dot product is
+v = (2, -1, 3)
 
-$$u\cdot v=1\cdot2+2(-1)+(-1)3=-3.$$
+We want to calculate the dot product and determine
+whether the vectors are perpendicular.
 
-It is nonzero, so $u$ and $v$ are not perpendicular. For $w$ we require
 
-$$u\cdot w=1\cdot2+2(-1)+(-1)a=-a=0,$$
+Step 1. Calculate u · v.
 
-which gives $a=0$. With $w=(2,-1,0)$, the check is
+The dot product is calculated by multiplying
+corresponding components and adding the results.
 
-$$u\cdot w=2-2+0=0,$$
+u · v = 1(2) + 2(-1) + (-1)(3)
 
-so the constructed vector is perpendicular to $u$.
+u · v = 2 - 2 - 3
+
+Therefore:
+
+u · v = -3
+
+
+Step 2. Determine whether the vectors are perpendicular.
+
+Two vectors are perpendicular if their dot product
+is equal to zero.
+
+Since:
+
+u · v = -3
+
+And -3 is not equal to zero, the vectors
+are not perpendicular.
+
+
+Step 3. Find a so that w is perpendicular to u.
+
+Given:
+
+w = (2, -1, a)
+
+For perpendicular vectors:
+
+u · w = 0
+
+Substitute the coordinates:
+
+1(2) + 2(-1) + (-1)(a) = 0
+
+2 - 2 - a = 0
+
+-a = 0
+
+Therefore:
+
+a = 0
+
+
+Step 4. Check the result.
+
+Substitute a = 0:
+
+w = (2, -1, 0)
+
+Calculate the dot product:
+
+u · w = 1(2) + 2(-1) + (-1)(0)
+
+u · w = 2 - 2 + 0
+
+Therefore:
+
+u · w = 0
+
+The result is correct.
+
+
+Final Answers:
+
+u · v = -3
+
+The vectors u and v are not perpendicular.
+
+a = 0
+
+w = (2, -1, 0)
+
+
+Conclusion:
+
+The dot product provides a way to determine
+whether two vectors are perpendicular.
+
+If the dot product equals zero, the vectors
+are perpendicular.
+
+It can also be used to find unknown components
+that satisfy a perpendicularity condition.
