@@ -1,134 +1,63 @@
-### Exercise 11. When Do Matrices Commute?
+### Solution 11. When Do Matrices Commute?
 
-Given
+Step 1. Compute both products.
 
-$$
-A=
-\begin{pmatrix}
-1 & 1 \\
-0 & 1 \\
-\end{pmatrix},\qquad B=
-\begin{pmatrix}
-a & b \\
-c & d \\
-\end{pmatrix}.
-$$
+AB =
 
-Find the conditions on $a,b,c,d$ under which $AB=BA$. Describe the general form of all such matrices $B$.
+| a + c | b + d |
+|-------|-------|
+| c     | d     |
 
-> **Why this exercise:** deepens the idea of noncommutativity by finding the conditions under which commutativity does hold
 
-#### Solution
+BA =
 
-**Step 1. Compute both products.**
+| a | a + b |
+|---|-------|
+| c | c + d |
 
-$$
-AB=
-\begin{pmatrix}
-1 & 1 \\
-0 & 1 \\
-\end{pmatrix}
-\begin{pmatrix}
-a & b \\
-c & d \\
-\end{pmatrix}
-=
-\begin{pmatrix}
-a+c & b+d \\
-c & d \\
-\end{pmatrix}
-$$
 
-$$
-BA=
-\begin{pmatrix}
-a & b \\
-c & d \\
-\end{pmatrix}
-\begin{pmatrix}
-1 & 1 \\
-0 & 1 \\
-\end{pmatrix}
-=
-\begin{pmatrix}
-a & a+b \\
-c & c+d \\
-\end{pmatrix}
-$$
+Step 2. Set AB = BA.
 
-**Step 2. Compare the entries.**
+Comparing corresponding entries:
 
-The equality $AB=BA$ holds if and only if all four corresponding entries are equal:
+a + c = a
+b + d = a + b
+c = c
+d = c + d
 
-$$
-\begin{cases}
-a+c = a, \\
-b+d = a+b, \\
-c = c, \\
-d = c+d.
-\end{cases}
-$$
+Simplifying:
 
-**Step 3. Simplify the system.**
+c = 0
+d = a
 
-The first equation gives $c=0$.
+Step 3. Determine the general form of B.
 
-The second equation gives $d=a$.
+There are no restrictions on a and b.
 
-The third equation is always true.
+Therefore:
 
-The fourth equation gives $c=0$, which is already known.
+B =
 
-Therefore
+| a | b |
+|---|---|
+| 0 | a |
 
-$$
-AB=BA \iff c=0 \ \text{and} \ d=a,
-$$
 
-while $a$ and $b$ are arbitrary real numbers.
+Final Answer:
 
-**Step 4. General form of $B$.**
+The matrices commute if and only if:
 
-$$
-B=
-\begin{pmatrix}
-a & b \\
-0 & a \\
-\end{pmatrix},
-\qquad a,b\in\mathbb{R}.
-$$
+c = 0 and d = a.
 
-Equivalently,
+The general form is:
 
-$$
-B=aI+bN,
-\qquad
-I=
-\begin{pmatrix}
-1 & 0 \\
-0 & 1 \\
-\end{pmatrix},
-\quad
-N=
-\begin{pmatrix}
-0 & 1 \\
-0 & 0 \\
-\end{pmatrix}.
-$$
+B = | a  b |
+    | 0  a |
 
-Since $A=I+N$, the matrices commuting with $A$ are exactly the polynomials in $A$ of degree at most $1$. They form a two-parameter family.
+where a and b are arbitrary real numbers.
 
-**Step 5. Verification.**
+Conclusion:
 
-For $c=0$ and $d=a$:
-
-$$
-AB=
-\begin{pmatrix}
-a & a+b \\
-0 & a \\
-\end{pmatrix}
-=BA.
-$$
-
-**Answer.** $AB=BA$ if and only if $c=0$ and $d=a$, that is, $B$ is upper triangular with equal diagonal entries, and $b$ is arbitrary.
+Although matrix multiplication is generally noncommutative,
+certain matrices commute. In this case, B must have equal
+diagonal entries and a zero lower-left entry.
