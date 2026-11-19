@@ -1,13 +1,41 @@
-## Question
+Given:
+u = (1, 2, 3)
+v = (2, 4, 6)
+w = (0, 1, 1)
 
-For $u=(1,2,3)$, $v=(2,4,6)$, and $w=(0,1,1)$, identify a relation between $u,v$ and decide whether all three can be linearly independent.
+1) Identify the relation between u and v
 
-## Solution
+Compare the coordinates:
 
-Coordinate comparison immediately shows
+v = 2 * u
 
-$$v=2u,$$
+Because:
 
-or equivalently $2u-v+0w=0$. This is a nontrivial linear relation, so the set $\{u,v,w\}$ is linearly dependent regardless of $w$.
+2 * (1, 2, 3) = (2, 4, 6)
 
-No determinant or row reduction is needed: two proportional vectors already supply a dependence relation for the whole set.
+Therefore, v is a scalar multiple of u.
+
+2) Can the three vectors be linearly independent?
+
+No.
+
+For vectors to be linearly independent, none of them
+can be written as a combination of the others.
+
+But here:
+
+v = 2u
+
+This means there is already a dependence relation.
+
+3) Explain why no long calculation is needed
+
+We can write:
+
+2u - v + 0w = (0, 0, 0)
+
+The coefficients are not all zero.
+
+This proves that the vectors are linearly dependent.
+
+The vector w does not change this conclusion.
