@@ -1,15 +1,42 @@
-## Question
+Given:
+u = (1, 1, 0)
+v = (1, 0, 1)
 
-For $u=(1,1,0)$ and $v=(1,0,1)$, predict the angle type from the dot product, compute the angle, and compare.
+1) Predict the type of angle
 
-## Solution
+First calculate the dot product:
 
-Since
+u . v = (1)(1) + (1)(0) + (0)(1)
+u . v = 1
 
-$$u\cdot v=1>0,$$
+Since the dot product is positive, the angle is acute (less than 90 degrees).
 
-the angle should be acute. Both norms equal $\sqrt2$, so
+2) Calculate the angle
 
-$$\cos\theta=\frac{u\cdot v}{\|u\|\|v\|}=\frac{1}{2}.$$
+Formula:
 
-Therefore $\theta=\arccos(1/2)=\pi/3=60^\circ$. This is acute, agreeing with the qualitative prediction.
+cos(theta) = (u . v) / (||u|| * ||v||)
+
+Calculate the lengths:
+
+||u|| = sqrt(1^2 + 1^2 + 0^2)
+||u|| = sqrt(2)
+
+||v|| = sqrt(1^2 + 0^2 + 1^2)
+||v|| = sqrt(2)
+
+Substitute:
+
+cos(theta) = 1 / (sqrt(2) * sqrt(2))
+cos(theta) = 1/2
+
+theta = arccos(1/2)
+theta = 60 degrees
+
+3) Compare
+
+The dot product is positive, so we predicted an acute angle.
+
+The calculated angle is 60 degrees.
+
+Therefore, the prediction is correct.
