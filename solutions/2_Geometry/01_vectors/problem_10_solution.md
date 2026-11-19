@@ -1,19 +1,40 @@
-## Question
+### Exercise 10. Triangle Area from Vectors
 
-For $A=(0,0,0)$, $B=(2,1,0)$, $C=(1,3,2)$, use a cross product to find the parallelogram and triangle areas and explain the factor $1/2$.
+The points $A=(0,0,0)$, $B=(2,1,0)$, and $C=(1,3,2)$ form a triangle. Construct $\overrightarrow{AB}$ and $\overrightarrow{AC}$, compute the area of the parallelogram using the cross product, and then find the area of the triangle. Explain the factor $\frac12$.
 
-## Solution
+> **Why this exercise:** shows the interpretation of the length of the cross product as area.
 
-The two sides from $A$ are
+#### Solution
 
-$$\overrightarrow{AB}=(2,1,0),\qquad \overrightarrow{AC}=(1,3,2).$$
+Construct the displacement vectors from $A$:
 
-Their cross product is
+$$
+\overrightarrow{AB} = B - A = (2-0,\,1-0,\,0-0) = (2,1,0),
+$$
 
-$$\overrightarrow{AB}\times\overrightarrow{AC}=(2,-4,5),$$
+$$
+\overrightarrow{AC} = C - A = (1-0,\,3-0,\,2-0) = (1,3,2).
+$$
 
-whose length is $\sqrt{4+16+25}=\sqrt{45}=3\sqrt5$. Therefore the parallelogram area is $3\sqrt5$ and the triangle area is
+Compute their cross product:
 
-$$\frac12\,3\sqrt5=\frac{3\sqrt5}{2}.$$
+$$
+\begin{aligned}
+\overrightarrow{AB}\times\overrightarrow{AC} &= (1\cdot 2 - 0\cdot 3,\, 0\cdot 1 - 2\cdot 2,\, 2\cdot 3 - 1\cdot 1) \\
+                                               &= (2,\,-4,\,5).
+\end{aligned}
+$$
 
-The diagonal of a parallelogram made from the two side vectors divides it into two congruent triangles, which explains the factor $1/2$.
+The area of the parallelogram spanned by $\overrightarrow{AB}$ and $\overrightarrow{AC}$ is the Euclidean norm of their cross product:
+
+$$
+A_{\mathrm{parallelogram}} = \|\overrightarrow{AB}\times\overrightarrow{AC}\| = \sqrt{2^2 + (-4)^2 + 5^2} = \sqrt{4 + 16 + 25} = \sqrt{45} = 3\sqrt{5}.
+$$
+
+The area of $\triangle ABC$ is half the area of this parallelogram:
+
+$$
+A_{\mathrm{triangle}} = \frac{1}{2}\|\overrightarrow{AB}\times\overrightarrow{AC}\| = \frac{3\sqrt{5}}{2}.
+$$
+
+**Explanation of the factor $\frac{1}{2}$:** Two adjacent sides $\overrightarrow{AB}$ and $\overrightarrow{AC}$ span a parallelogram whose area is $\|\overrightarrow{AB}\times\overrightarrow{AC}\|$. The diagonal segment $BC$ divides this parallelogram into two congruent triangles, one of which is $\triangle ABC$. Consequently, the triangle occupies exactly half of the parallelogram's area.
