@@ -1,19 +1,61 @@
-## Question
+Given:
+u = (4, 2)
+v = (1, 1)
 
-Project $u=(4,2)$ onto $v=(1,1)$, compute the residual $r$, verify $r\cdot v=0$, and explain the result geometrically.
+1) Calculate the projection of u onto v
 
-## Solution
+Formula:
 
-Using the projection formula,
+proj_v(u) = ((u . v) / (v . v)) * v
 
-$$\operatorname{proj}_v u=\frac{u\cdot v}{v\cdot v}v=\frac{6}{2}(1,1)=(3,3).$$
+First calculate the dot product:
 
-Thus
+u . v = (4)(1) + (2)(1)
+u . v = 6
 
-$$r=u-\operatorname{proj}_v u=(4,2)-(3,3)=(1,-1),$$
+Calculate v . v:
 
-and the requested calculation is
+v . v = (1)(1) + (1)(1)
+v . v = 2
 
-$$r\cdot v=(1,-1)\cdot(1,1)=1-1=0.$$
+Substitute:
 
-The projection $(3,3)$ is parallel to $v$, so it is the component of $u$ in the projection direction. Subtracting this parallel component leaves the perpendicular component $r$. The zero dot product verifies geometrically that $r$ is perpendicular to the direction $v$.
+proj_v(u) = (6/2) * (1, 1)
+proj_v(u) = 3 * (1, 1)
+
+Therefore:
+
+proj_v(u) = (3, 3)
+
+2) Calculate r
+
+Formula:
+
+r = u - proj_v(u)
+
+r = (4, 2) - (3, 3)
+
+r = (1, -1)
+
+3) Verify that r is perpendicular to v
+
+Calculate the dot product:
+
+r . v = (1)(1) + (-1)(1)
+r . v = 1 - 1
+r . v = 0
+
+Since the dot product is zero, r is perpendicular to v.
+
+4) Geometric explanation
+
+The projection (3, 3) represents the component of u
+that is parallel to v.
+
+The vector r = (1, -1) represents the remaining
+perpendicular component.
+
+Together, they reconstruct the original vector:
+
+u = (3, 3) + (1, -1)
+u = (4, 2)
