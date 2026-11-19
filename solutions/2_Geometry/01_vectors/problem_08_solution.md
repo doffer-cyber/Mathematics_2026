@@ -1,15 +1,54 @@
-## Question
+### Exercise 8. Linear Combination and Checking the Result
 
-Determine whether $w=(5,1)$ is $au+bv$ for $u=(1,1)$ and $v=(2,-1)$; find and check the coefficients and explain their geometric meaning.
+Check whether $w=(5,1)$ can be written as
 
-## Solution
+$$
+w=au+bv,
+$$
 
-Equating coordinates in $au+bv=w$ gives
+where $u=(1,1)$ and $v=(2,-1)$. If so, find $a,b$, reconstruct $w$ from them, and explain the geometric meaning of the existence of such coefficients.
 
-$$a+2b=5,\qquad a-b=1.$$
+> **Why this exercise:** connects linear combinations with the geometry of directions.
 
-Subtracting the second equation from the first gives $3b=4$, hence $b=4/3$ and $a=1+b=7/3$. Reconstruction checks the answer:
+#### Solution
 
-$$\frac73(1,1)+\frac43(2,-1)=\left(\frac{15}{3},\frac{3}{3}\right)=(5,1).$$
+Substitute the given vectors into $w=au+bv$:
 
-Geometrically, the coefficients describe the directed amounts of the two nonparallel directions needed to reach $w$; since $u$ and $v$ span the plane, such coordinates exist uniquely.
+$$
+(5,1)=a(1,1)+b(2,-1)=(a+2b,\,a-b).
+$$
+
+Equating components yields the linear system
+
+$$
+\begin{cases}
+a+2b=5, \\
+a-b=1.
+\end{cases}
+$$
+
+Subtracting the second equation from the first gives
+
+$$
+3b=4 \implies b=\frac{4}{3}.
+$$
+
+Substituting $b=\frac{4}{3}$ into $a-b=1$ gives
+
+$$
+a=1+\frac{4}{3}=\frac{7}{3}.
+$$
+
+Reconstructing $w$ from $a=\frac{7}{3}$ and $b=\frac{4}{3}$ confirms the result:
+
+$$
+\begin{aligned}
+\frac{7}{3}(1,1)+\frac{4}{3}(2,-1) &= \left(\frac{7}{3}+\frac{8}{3},\,\frac{7}{3}-\frac{4}{3}\right) \\
+                                    &= \left(\frac{15}{3},\,\frac{3}{3}\right) \\
+                                    &= (5,1).
+\end{aligned}
+$$
+
+**Geometric meaning:** Because $u$ and $v$ are not scalar multiples of one another, they point along two non-collinear directions in $\mathbb{R}^2$ and therefore span the entire plane. The existence of unique scalars $a=\frac{7}{3}$ and $b=\frac{4}{3}$ means that the target point $(5,1)$ can be reached from the origin by scaling $u$ by $\frac{7}{3}$, scaling $v$ by $\frac{4}{3}$, and adding the resulting vectors via the parallelogram rule.
+
+---
